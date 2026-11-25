@@ -17,7 +17,9 @@ if (
   LINE.trim().length === 0 ||
   LINE.includes("\n")
 ) {
-  throw new Error("entry must be one line of 1-200 characters");
+  throw new Error(
+    `entry must be one line of 1-200 characters (got ${LINE.length})`,
+  );
 }
 
 const dir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
